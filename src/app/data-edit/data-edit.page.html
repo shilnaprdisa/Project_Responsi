@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Karyawan</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Edit Karyawan</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">NIP</ion-label>
+      <ion-input
+        required
+        [(ngModel)]="nip"
+        readonly
+        placeholder="nip"
+        type="teks"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">nama</ion-label>
+      <ion-input required [(ngModel)]="nama" placeholder="Nama" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">alamat</ion-label>
+      <ion-input required [(ngModel)]="alamat" placeholder="alamat" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">no HP</ion-label>
+      <ion-input required [(ngModel)]="no_hp" placeholder="No Hp" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="button"
+          (click)="editData()"
+          color="primary"
+          shape="full"
+          expand="block"
+          >Edit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>

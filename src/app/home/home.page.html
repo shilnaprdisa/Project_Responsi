@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Karyawan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> Karyawan </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="full">
+    <ion-button
+      type="button"
+      [routerLink]="['/data-tambah']"
+      routerLinkActive="router-link-active"
+      color="success"
+      expand="block"
+    >
+      Tambah Karyawan</ion-button
+    >
+  </ion-list>
+  <ion-list>
+    <ion-list-header>List Karyawan</ion-list-header>
+  </ion-list>
+  <ion-card lines="inset" *ngFor="let data_value of data">
+    <ion-item>
+      <ion-label>
+        <h2>{{ data_value.alamat }}</h2>
+        <p>{{ data_value.nama }}</p>
+      </ion-label>
+      <ion-icon
+        color="primary"
+        slot="end"
+        [routerLink]="['/data-lihat/',data_value.nip]"
+        routerLinkActive="router-link-active"
+        name="arrow-redo-circle-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="warning"
+        slot="end"
+        [routerLink]="['/data-edit/',data_value.nip]"
+        routerLinkActive="router-link-active"
+        name="create-outline"
+        size="small"
+      ></ion-icon>
+      <ion-icon
+        color="danger"
+        slot="end"
+        (click)="deleteData(data_value.nip)"
+        name="trash-outline"
+        size="small"
+      ></ion-icon>
+    </ion-item>
+  </ion-card>
+  <ion-item (click)="logout()">
+    <ion-icon slot="start" ios="exit-outline" md="exit-sharp"></ion-icon>
+    <ion-label>Logout</ion-label>
+  </ion-item>
+</ion-content>
