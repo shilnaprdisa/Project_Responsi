@@ -1,27 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Menu Login</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <ion-item lines="full">
-    <ion-label position="floating">Username</ion-label>
-    <ion-input
-      type="text"
-      [(ngModel)]="username"
-      required="required"
-    ></ion-input>
-  </ion-item>
-  <ion-item lines="full">
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password" [(ngModel)]="password" required="required">
-    </ion-input>
-  </ion-item>
-  <ion-row>
-    <ion-col>
-      <ion-button type="submit" color="primary" expand="block" (click)="login()"
-        >Login</ion-button
+  <div class="menu_login">
+    <ion-item lines="full">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input
+        placeholder="Username"
+        type="text"
+        [(ngModel)]="username"
+        required="required"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-icon name="key-outline"></ion-icon>
+      <ion-input
+        placeholder="Password"
+        type="password"
+        [(ngModel)]="password"
+        required="required"
       >
-    </ion-col>
-  </ion-row>
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          type="submit"
+          color="primary"
+          expand="block"
+          (click)="login()"
+          >Login</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
